@@ -17,8 +17,12 @@ const lengthInputCheck = (e) => {
   var firstName = document.querySelector("#inputFirstname");
   var lastName = document.querySelector("#inputLastname");
   var age = document.querySelector("#inputAge");
+  //
   if (firstName.value.length < 5) {
     firstName.style.color = "red";
+    // prints the content of the variable into the div #output
+    // += needed for all values to be  displayed or they would be overwritten otherwise
+    // the <br> give the linebreak in the DOM
     document.querySelector(
       "#output"
     ).innerHTML += `<span class="red">Firstname: ${firstName.value}</span><br>`;
@@ -28,6 +32,7 @@ const lengthInputCheck = (e) => {
       "#output"
     ).innerHTML += `<span class="green">Firstname: ${firstName.value}</span><br>`;
   }
+  //
   if (lastName.value.length < 5) {
     lastName.style.color = "red";
     document.querySelector(
@@ -40,10 +45,10 @@ const lengthInputCheck = (e) => {
     ).innerHTML += `<span class="green">Lastname: ${lastName.value}</span><br>`;
   }
 
-  document.querySelector("#output").innerHTML += `Age: ${age.value}`;
+  document.querySelector("#output").innerHTML += `Age: ${age.value}<br>`;
 };
 
-// checks firstnames length when entered
+// checks length when entered
 document
   .querySelector("#checkLength")
   .addEventListener("click", lengthInputCheck);
@@ -52,7 +57,3 @@ document
 // document
 //   .querySelector("#inputLastname")
 //   .addEventListener("focusout", lengthInputCheck);
-
-// prints the content of the variable into the div #output
-// += needed for all values to be  displayed or they would be overwritten otherwise
-// the <br> give the linebreak in the DOM
